@@ -9,17 +9,17 @@ In this project, we will build classification model to predict if potential clie
 
 ## Design
 ---
-- I will build the model to answer to question of the bank: Is this applicant eligible for loan?
+- We will build the model to answer to question of the bank: Is this applicant eligible for loan?
 - The model will predict **Yes/No** based on historical credit data and appropriate algorithm.
-- I will do **exploratory analysis** on my dataset to seek insights and do **features engineer/selection** to ensure the model has the optimized input.
-- I will few baseline models (Logistic Regression, KNN, SGD) and move on in to more advanced models (AdaBoost, XGBoost, LightGBM), compare them and choose the best model to optimize.
+- We will do **exploratory analysis** on my dataset to seek insights and do **features engineer/selection** to ensure the model has the optimized input.
+- We will few baseline models (Logistic Regression, KNN, SGD) and move on in to more advanced models (AdaBoost, XGBoost, LightGBM), compare them and choose the best model to optimize.
 - XGBoost is the chosen model based on dedicated metrics (ROC AUC score and F2 score) to be optimized and deployment.
 
 ## Data
 ---
 - The dataset is provided by [Home Credit](http://www.homecredit.net/) and can be downloaded via [Kaggle](https://www.kaggle.com/c/home-credit-default-risk/data). 
 - The original dataset has over *300,000* data points and *122* features to work with. After doing EDA and features engineering, I have arrived with the final dataset consists of over *300,000* data points and *250* features to build the models.
-- The **EDA notebook** can be found [HERE](https://github.com/luongtruong77/loan_risk_classification/blob/main/notebooks/EDA_features_engineering.ipynb)
+- The **EDA notebook** can be found [HERE](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/notebooks/EDA_features_engineering.ipynb)
 
 ## Algorithms
 ---
@@ -38,20 +38,20 @@ In this project, we will build classification model to predict if potential clie
     - Naive Bayes
     - Stochastic Gradient Descent (SGD)
     - AdaBoost
-    - XGBoost (notebook on how I train and tune for this algorithm can be found [HERE](https://github.com/luongtruong77/loan_risk_classification/blob/main/notebooks/XGBoost_train_tune.ipynb))
-    - LightGBM (notebook on how I train and GridSearch for this algorithm can be found [HERE](https://github.com/luongtruong77/loan_risk_classification/blob/main/notebooks/lightgbm_params_search.ipynb))
+    - XGBoost (notebook on how I train and tune for this algorithm can be found [HERE](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/notebooks/XGBoost_train_tune.ipynb))
+    - LightGBM (notebook on how I train and GridSearch for this algorithm can be found [HERE](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/notebooks/lightgbm_params_search.ipynb))
     - Multilayer perceptron (MLP)
-- The **models comparison notebook** can be found [HERE](https://github.com/luongtruong77/loan_risk_classification/blob/main/notebooks/Models_comparison.ipynb)
+- The **models comparison notebook** can be found [HERE](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/notebooks/Models_comparison.ipynb)
 - The chosen model is **XGBoost** based on 2 metrics: `ROC AUC score` and `F-beta (beta=2) score`. The reason I chose F2 is because of the purpose of business is to flag people with essential bad credit but not too strict on the `precision` either since we want to give people chances.
-![](https://github.com/luongtruong77/loan_risk_classification/blob/main/figures/roc_curve_comparison_plot.png?raw=true)
-![](https://github.com/luongtruong77/loan_risk_classification/blob/main/figures/f2_comparison.png?raw=true)
+![](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/figures/roc_curve_comparison_plot.png)
+![](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/figures/f2_comparison.png)
 
 ##### Evalution
 - Based on the baseline XGBoost model which has F2 score of **0.3921**, I will run GridSearchCV for small subset of randomly selected data, and apply the best parameters to the full dataset.
 - The optimized model has slightly better performance.
 - The **XGBoost parameters tunning notebook** can be found above
 - It has F2 of 0.463 for train set and 0.432 for test set.
-![](https://github.com/luongtruong77/loan_risk_classification/blob/main/figures/optimized_metrics.png?raw=true)
+![](https://github.com/nisheethjaiswal/Home-Credit-Default-Risk/blob/main/classification%20-%20loan%20default%20risk%20detection/figures/optimized_metrics.png)
 
 ### Tools
 ---
